@@ -1,0 +1,86 @@
+@import '../libs/variables';
+
+.item {
+  &_block {
+    display: flex;
+    justify-content: center;
+  }
+  &_wrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 225px;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(220, 109, 62, 0.2);
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 1px 12px 14px 2px rgba(220, 109, 62, 0.2);
+    }
+  }
+  &_img {
+    width: 170px;
+  }
+  &_title {
+    max-width: 160px;
+    font-family: $text-title;
+    font-size: 24px;
+    line-height: 1;
+    color: $orange;
+  }
+  &_text {
+    max-width: 160px;
+    font-size: 12px;
+  }
+  &_width {
+    max-width: 160px;
+    width: 100%;
+    text-align: left;
+  }
+  &_size {
+    width: 160px;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: inherit;
+      height: 25px;
+      border-radius: 5px;
+      li {
+        padding: 3px;
+        list-style: none;
+        background-color: lighten($color: $orange, $amount: 25);
+        border-radius: 7px;
+        min-width: 40%;
+        margin: 0 5px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .item_active {
+        background-color: $orange;
+        color: #fff;
+      }
+    }
+  }
+  &_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 160px;
+    width: 100%;
+  }
+  &_price {
+    font-size: 22px;
+    position: relative;
+    top: 3px;
+  }
+  &_plus {
+    cursor: pointer;
+  }
+}

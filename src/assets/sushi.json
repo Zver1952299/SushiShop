@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/okinava.p.jpg?2917445ada25ce23995a5f",
+    "title": "Okinava",
+    "price": 10,
+    "size": ["1", "1/2"],
+    "composition": "Tempura eel, cream cheese, cucumber, sesame.",
+    "width": 200
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/filadelfiya-klassicheskaya.p.jpg?2917445ada25ce23995a5f",
+    "title": "Fila Classic",
+    "price": 13,
+    "size": ["1", "1/2"],
+    "composition": "Salmon, cream cheese.",
+    "width": 220
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/lava.p.jpg?2917445ada25ce23995a5f",
+    "title": "Lava",
+    "price": 12,
+    "size": ["1", "1/2"],
+    "composition": "Salmon, snow crab, cream cheese, lava sauce.",
+    "width": 230
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/gejsha.p.jpg?2917445ada25ce23995a5f",
+    "title": "Geysha",
+    "price": 9,
+    "size": ["1", "1/2"],
+    "composition": "Salmon, cucumber, melted cheese.",
+    "width": 200
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/kanada.p.jpg?2917445ada25ce23995a5f",
+    "title": "Canada",
+    "price": 10,
+    "size": ["1", "1/2"],
+    "composition": "Smoked eel, Japanese omelet, cream cheese.",
+    "width": 190
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/kaliforniya.p.jpg?2917445ada25ce23995a5f",
+    "title": "California",
+    "price": 13,
+    "size": ["1", "1/2"],
+    "composition": "Masago caviar, snow crab, mayonnaise, cucumber.",
+    "width": 210
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/segun.p.jpg?2917445ada25ce23995a5f",
+    "title": "Shogun",
+    "price": 11,
+    "size": ["1", "1/2"],
+    "composition": "Salmon, Japanese omelet, lava sauce.",
+    "width": 180
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://enjoysushi70.ru/ruen.datas/menu/photos/boston.p.jpg?2917445ada25ce23995a5f",
+    "title": "Boston",
+    "price": 14,
+    "size": ["1", "1/2"],
+    "composition": "Smoked salmon, green onion, cream cheese.",
+    "width": 230
+  }
+]

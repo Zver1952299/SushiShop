@@ -1,0 +1,74 @@
+@import '../../scss/libs/variables';
+
+.header {
+  height: 60px;
+  margin: 20px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 850px) {
+    height: 160px;
+    flex-direction: column;
+  }
+
+  &_middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+  }
+
+  .logo {
+    display: flex;
+    text-decoration: none;
+
+    &_img {
+      width: 60px;
+      height: 60px;
+    }
+
+    &_text {
+      margin: -3px 0 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        font-family: $text-title;
+        font-size: 32px;
+        color: $orange;
+      }
+
+      h3 {
+        color: #000;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 40px;
+
+    &_link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .cart {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+
+    p {
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
