@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { clearItems } from '../redux/slices/cartSlice';
+import { clearItems, selectCart } from '../redux/slices/cartSlice';
 
 import dlt from '../assets/img/delete.svg';
 
@@ -11,9 +11,9 @@ import CartItem from './CartItem';
 
 import styles from '../scss/components/CartInfo.module.scss';
 
-export default function CartInfo() {
+const CartInfo: React.FC = () => {
   const dispatch = useDispatch();
-  const { totalPrice, items } = useSelector((state) => state.cart);
+  const { totalPrice, items } = useSelector(selectCart);
 
   const onClickClear = () => {
     if (window.confirm('Are you sure you want clear cart?')) {
@@ -21,7 +21,7 @@ export default function CartInfo() {
     }
   };
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount: number = items.reduce((sum: number, item: any) => sum + item.count, 0);
 
   if (!totalCount) {
     return <CartEmpty />;
@@ -37,7 +37,7 @@ export default function CartInfo() {
         </span>
       </div>
       <div className={styles.cart_content}>
-        {items.map((item) => (
+        {items.map((item: any) => (
           <CartItem key={item.id} {...item} />
         ))}
       </div>
@@ -50,11 +50,13 @@ export default function CartInfo() {
         </p>
       </div>
       <div className={styles.cart_botton}>
-        <Link to="/" className={styles.cart_back}>
+        <Link to="/SushiShop" className={styles.cart_back}>
           Back
         </Link>
         <div className={styles.cart_pay}>Pay now</div>
       </div>
     </div>
   );
-}
+};
+
+export default CartInfo;

@@ -15,6 +15,13 @@
       outline: none;
       border: 1px solid rgba(0, 0, 0, 0.2);
     }
+    @media (max-width: 780px) {
+      font-size: 10px;
+      width: 140px;
+    }
+    @media (max-width: 390px) {
+      width: 110px;
+    }
   }
   &_icon {
     position: absolute;
@@ -24,6 +31,9 @@
     height: 16px;
     margin-right: 3px;
     opacity: 0.5;
+    @media (max-width: 780px) {
+      top: 1px;
+    }
   }
   &_clearIcon {
     width: 14px;

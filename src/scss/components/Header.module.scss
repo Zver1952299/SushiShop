@@ -7,9 +7,8 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 850px) {
-    height: 160px;
-    flex-direction: column;
+  @media (max-width: 500px) {
+    margin: 14px 12px;
   }
 
   &_middle {
@@ -22,11 +21,22 @@
 
   .logo {
     display: flex;
+    align-items: center;
     text-decoration: none;
+    margin-right: 5px;
 
     &_img {
       width: 60px;
       height: 60px;
+
+      @media (max-width: 780px) {
+        width: 40px;
+        height: 40px;
+      }
+
+      @media (max-width: 440px) {
+        display: none;
+      }
     }
 
     &_text {
@@ -35,15 +45,26 @@
       flex-direction: column;
       justify-content: center;
 
+      @media (max-width: 780px) {
+        margin: -3px 0 0 4px;
+      }
       h2 {
         font-family: $text-title;
         font-size: 32px;
         color: $orange;
+
+        @media (max-width: 780px) {
+          font-size: 22px;
+        }
       }
 
       h3 {
         color: #000;
         font-size: 20px;
+
+        @media (max-width: 780px) {
+          font-size: 10px;
+        }
       }
     }
   }
@@ -51,6 +72,16 @@
   .nav {
     display: flex;
     gap: 40px;
+
+    @media (max-width: 780px) {
+      font-size: 12px;
+      gap: 21px;
+    }
+
+    @media (max-width: 390px) {
+      font-size: 10px;
+      gap: 14px;
+    }
 
     &_link {
       text-decoration: none;
@@ -61,7 +92,28 @@
   .cart {
     display: flex;
     text-decoration: none;
+    position: relative;
     color: #000;
+
+    &_img {
+      @media (max-width: 780px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &_count {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      font-size: 10px;
+    }
+
+    &_total {
+      @media (max-width: 780px) {
+        font-size: 14px;
+      }
+    }
 
     p {
       display: flex;

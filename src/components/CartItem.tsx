@@ -5,15 +5,23 @@ import plus from '../assets/img/plus.png';
 import minus from '../assets/img/minus.png';
 import cross from '../assets/img/cross.png';
 
-import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
+import { CartItem, addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 
 import styles from '../scss/components/CartInfo.module.scss';
 
-const CartItem = ({ id, title, price, imageUrl, count }) => {
+type CartItemProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  count: number;
+};
+
+const CartItemBlock: React.FC<CartItemProps> = ({ id, title, price, imageUrl, count }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
-    dispatch(addItem({ id }));
+    dispatch(addItem({ id } as CartItem));
   };
 
   const onClickMinus = () => {
@@ -43,4 +51,4 @@ const CartItem = ({ id, title, price, imageUrl, count }) => {
   );
 };
 
-export default CartItem;
+export default CartItemBlock;

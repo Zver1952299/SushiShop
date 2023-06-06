@@ -2,33 +2,38 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
+import { SortPropertyEnum, selectFilterSort, setSort } from '../redux/slices/filterSlice';
+
 import styles from '../scss/components/Sort.module.scss';
 
-import { setSort } from '../redux/slices/filterSlice';
+type ListItem = {
+  name: string;
+  sortType: SortPropertyEnum;
+};
 
-export const list = [
-  { name: 'popularity (desc)', sortType: 'raiting' },
-  { name: 'popularity (asc)', sortType: '-raiting' },
-  { name: 'price (desc)', sortType: 'price' },
-  { name: 'price (asc)', sortType: '-price' },
-  { name: 'name (desc)', sortType: 'title' },
-  { name: 'name (asc)', sortType: '-title' },
+export const list: ListItem[] = [
+  { name: 'popularity (desc)', sortType: SortPropertyEnum.RATING_DESC },
+  { name: 'popularity (asc)', sortType: SortPropertyEnum.RATING_ASC },
+  { name: 'price (desc)', sortType: SortPropertyEnum.PRICE_DESC },
+  { name: 'price (asc)', sortType: SortPropertyEnum.RATING_ASC },
+  { name: 'name (desc)', sortType: SortPropertyEnum.TITLE_DESC },
+  { name: 'name (asc)', sortType: SortPropertyEnum.TITLE_ASC },
 ];
 
-export default function Sort() {
+const SortPopup: React.FC = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const sort = useSelector((state) => state.filter.sort);
-  const sortRef = useRef();
+  const sort = useSelector(selectFilterSort);
+  const sortRef = useRef<HTMLDivElement>(null);
 
-  const onSelectSort = (obj) => {
+  const onSelectSort = (obj: ListItem) => {
     dispatch(setSort(obj));
     setOpen(false);
   };
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.composedPath().includes(sortRef.current)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
         setOpen(false);
       }
     };
@@ -64,4 +69,6 @@ export default function Sort() {
       )}
     </div>
   );
-}
+};
+
+export default SortPopup;

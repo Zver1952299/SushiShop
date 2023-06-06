@@ -2,26 +2,46 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { addItem } from '../../redux/slices/cartSlice';
+import { CartItem, addItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
 import styles from '../../scss/components/SushiItem.module.scss';
 
 import plus from '../../assets/img/plus.svg';
+import { Link } from 'react-router-dom';
 
-export default function SushiItem({ id, imageUrl, title, composition, price, size, width }) {
+type SushiItemProps = {
+  id: string;
+  imageUrl: string;
+  title: string;
+  composition: string;
+  price: number;
+  size: number[];
+  width: number;
+};
+
+const SushiItem: React.FC<SushiItemProps> = ({
+  id,
+  imageUrl,
+  title,
+  composition,
+  price,
+  size,
+  width,
+}) => {
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
+  const cartItem = useSelector(selectCartItemById(id));
   const [activeSize, setActiveSize] = useState(0);
 
   const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title,
       price,
       imageUrl,
       size: activeSize,
+      count: 0,
     };
     dispatch(addItem(item));
   };
@@ -29,8 +49,11 @@ export default function SushiItem({ id, imageUrl, title, composition, price, siz
   return (
     <div className={styles.item_block}>
       <div className={styles.item_wrapper}>
-        <img src={imageUrl} alt="" className={styles.item_img} />
-        <h3 className={styles.item_title}>{title}</h3>
+        <Link to={`/fullsushi/${id}`} className={styles.item_link}>
+          <img src={imageUrl} alt="" className={styles.item_img} />
+          <h3 className={styles.item_title}>{title}</h3>
+        </Link>
+
         <p className={styles.item_text}>
           {composition.length > 80 ? `${composition.substr(0, 80)}...` : composition}
         </p>
@@ -57,4 +80,6 @@ export default function SushiItem({ id, imageUrl, title, composition, price, siz
       </div>
     </div>
   );
-}
+};
+
+export default SushiItem;

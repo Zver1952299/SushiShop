@@ -2,10 +2,12 @@ import React from 'react';
 
 import styles from '../scss/components/Cart.module.scss';
 
-export default function AboutUs() {
+const Contacts: React.FC = () => {
   return (
     <div className={styles.cart_wrapper}>
-      <h2>About us</h2>
+      <h2>Contacts</h2>
     </div>
   );
-}
+};
+
+export default Contacts;

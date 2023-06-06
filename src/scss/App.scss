@@ -33,11 +33,18 @@ body {
     margin-top: 20px;
   }
 
+  @media (max-width: 850px) {
+    width: calc(100vw - 20px);
+  }
+
   .content {
     border-top: 3px solid rgba(220, 109, 62, 0.2);
     &_title {
       margin-top: 10px;
       text-align: center;
+      @media (max-width: 580px) {
+        margin: 0;
+      }
     }
     &_items {
       margin: 20px 70px;
@@ -46,6 +53,9 @@ body {
       grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;
+      @media (max-width: 580px) {
+        margin-top: 10px;
+      }
 
       @media (max-width: 1200px) {
         grid-template-columns: repeat(3, 1fr);

@@ -3,8 +3,13 @@ import classNames from 'classnames';
 
 import styles from '../scss/components/Categories.module.scss';
 
-export default function Categories({ value, onChangeCategory }) {
-  const CategArr = ['All', 'Rolls', 'Baked rolls', 'Sets'];
+type CategoriesProps = {
+  value: number;
+  onChangeCategory: (i: number) => void;
+};
+
+const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
+  const CategArr: string[] = ['All', 'Rolls', 'Baked rolls', 'Sets'];
 
   return (
     <div className={styles.categ_wrapper}>
@@ -24,4 +29,6 @@ export default function Categories({ value, onChangeCategory }) {
       </ul>
     </div>
   );
-}
+};
+
+export default Categories;
